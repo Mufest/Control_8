@@ -6,6 +6,41 @@
     <title>Formulario de Vuelos</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {        
+        const form = document.querySelector("form");
+
+        // Agregar el evento de validación al enviar el formulario
+        form.addEventListener("submit", function(event) {
+            // Validar fecha
+            const fecha = document.getElementById("fecha").value;
+            const hoy = new Date().toISOString().split("T")[0];
+            if (fecha < hoy) {
+                alert("La fecha del vuelo no puede ser anterior a hoy.");
+                event.preventDefault(); // Evitar que el formulario se envíe
+                return;
+            }
+
+            // Validar que los campos numéricos sean positivos
+            const plazasDisponibles = document.getElementById("plazas_disponibles").value;
+            const precio = document.getElementById("precio").value;
+
+            if (plazasDisponibles <= 0 || precio <= 0) {
+                alert("Las plazas disponibles y el precio deben ser valores positivos.");
+                event.preventDefault();
+                return;
+            }
+
+            // Validar que los campos numéricos solo contengan números
+            if (isNaN(plazasDisponibles) || isNaN(precio)) {
+                alert("Por favor, ingrese valores numéricos válidos en los campos de plazas disponibles y precio.");
+                event.preventDefault();
+                return;
+            }
+        });
+    });
+</script>
+
 <body>
     <h1>Agregar Vuelo</h1>
     <form action="procesar_vuelo.php" method="post">
