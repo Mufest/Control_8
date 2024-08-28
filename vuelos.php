@@ -21,7 +21,7 @@
         <label for="plazas_disponibles">Plazas Disponibles:</label>
         <input type="number" id="plazas_disponibles" name="plazas_disponibles" required><br><br>
         
-        <label for="precio">Precio:</label>
+        <label for="precio">Precio Vuelo:</label>
         <input type="number" id="precio" name="precio" step="0.01" required><br><br>
         
         <input type="submit" value="Agregar Vuelo">
