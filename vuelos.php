@@ -15,7 +15,7 @@
         <label for="destino">Destino:</label>
         <input type="text" id="destino" name="destino" required><br><br>
         
-        <label for="fecha">Fecha:</label>
+        <label for="fecha">Fecha Vuelo:</label>
         <input type="date" id="fecha" name="fecha" required><br><br>
         
         <label for="plazas_disponibles">Plazas Disponibles:</label>
